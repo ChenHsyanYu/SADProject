@@ -7,26 +7,48 @@
             <span class="factoryName">US Fabric Supplier</span>
         </div>
     </div>
-    <div class="demo-collapse">
-    <el-collapse accordion>
-      <el-collapse-item name="1">
-        <template #title>
-          Consistency<el-icon class="header-icon">
-            <info-filled />
-          </el-icon>
-        </template>
-        <div>
-          Consistent with real life: in line with the process and logic of real
-          life, and comply with languages and habits that the users are used to;
-        </div>
-        <div>
-          Consistent within interface: all elements should be consistent, such
-          as: design style, icons and texts, position of elements, etc.
-        </div>
-      </el-collapse-item>
-    </el-collapse>
+    <div class="wrap">
+      <div class="demo-collapse">
+        <el-collapse accordion>
+          <el-collapse-item name="1">
+            <template #title><span class="info">商品資訊 product attachments</span></template>
+              <div class="infoBody">
+                <div id="body">
+                  <span id="id">#Lot </span>
+                  <el-button size="large"><span class="button">發票內容 invoice</span></el-button>
+                  <el-button size="large"><span class="button">付費重量 payload</span></el-button>
+                </div>
+              </div>
+          </el-collapse-item>
+        </el-collapse>
+      </div>
+      <div class="map">
+        <img src="@/assets/googlemap.png" id="mapImg">
+        <span id="location"><el-icon id="icon"><location/></el-icon>美國 U.S Frabics Inc</span>
+      </div>
     </div>
-                            
+    <div class="detailed">
+      <div id="first">
+        <span class="title2">產品製造資訊 production</span>
+        <div id="inside">
+          <span id="date">2011/02/13  <span>am 09：15</span></span>
+          <span>實際產品名稱 product title</span>
+          <span>數量 quantity</span>
+          <span>批發號 #LOT</span>
+        </div>
+      </div>
+      <div id="sec">
+        <span class="title2">產品製造資訊 production</span>
+        <div id="inside">
+          <span id="date">2011/02/13  <span>am 09：15</span></span>
+          <span>實際產品名稱 product title</span>
+          <span>數量 quantity</span>
+          <span>批發號 #LOT</span>
+          </div>
+      </div>
+    </div>
+      
+                
     
   </div>
 </template>
@@ -43,7 +65,7 @@ export default {
         margin: 40px;
     }
     .rawBar{
-        height: 80px;
+        height: 90px;
         width: 10px;
         background-color: #FFD6B0;
         border-radius: 30px;
@@ -60,10 +82,118 @@ export default {
     .title{
         color: #000;
         /* font-family: Inter; */
-        font-size: 22px;
+        font-size: 28px;
         font-style: normal;
         font-weight: 500;
         line-height: normal;
     }
 
+    .demo-collapse{
+      width: 77%;
+      padding: 0 40px ;
+      
+    }
+    .info{
+      font-size: 25px;
+    }
+
+    .infoBody{
+      /* height: 60px; */
+      align-content: center;
+      margin: auto 0;
+      /* background-color: #F4F4F4; */
+      text-align: center;
+      border-top: 1px solid;
+    }
+
+    #id{
+      font-size: 22px;
+    }
+    #body{
+      position: relative;
+      top: 20px;
+      margin: 0 auto;
+      display: flex;
+      gap: 50px;
+      height: 60px;
+      /* border-top: 1px solid; */
+      /* text-align: center; */
+
+    }
+    .button{
+      font-size: 22px;
+      padding: 10px;
+    }
+
+    #mapImg{
+      width: 70%;
+      height: auto;
+    }
+    .wrap{
+      display: flex;
+      gap: 5px;
+    }
+
+    #location{
+      display: block;
+      padding: 20px;
+      font-size: 25px;
+      /* align-items: center; */
+    }
+    #icon{
+      font-size: 25px;
+      padding-right: 10px;
+      color: #D13F3F;
+    }
+    .title2{
+      display: block;
+      font-size: 22px;
+      /* position: absolute; */
+      /* top: 350px; */
+      margin-left:40px;
+      padding: 10px 20px;
+      background: #FFEBD8;
+      border-radius: 10px;
+      margin-bottom: 10px;
+
+      
+    }
+    #inside{
+      display: flex;
+      gap: 30px;
+      text-decoration: underline;
+      font-size: 22px;
+      position: absolute;
+      /* top: 400px; */
+      margin-left:40px;
+      width: 900px;
+    }
+    #date{
+      display: block;
+    }
+
+    .detailed{
+      /* display: grid; */
+      /* position: absolute; */
+      /* top: 350px; */
+      /* left: 40px; */
+    }
+    .title3{
+      display: block;
+      font-size: 22px;
+      /* position: absolute; */
+      /* top: 350px; */
+      margin-left:40px;
+    }
+
+    #first{
+      /* gap: 40px; */
+      position: absolute;
+      top: 350px;
+      /* width: 300px; */
+    }
+    #sec{
+      position: absolute;
+      top: 500px;
+    }
 </style>

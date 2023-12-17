@@ -1,6 +1,6 @@
 # frontend
 
-##怎麼看vue
+## 怎麼看vue
 ```
 在views資料夾裡面新建一個vue檔案，template寫html，style寫css，script寫java script
 在router資料夾下面index.js中設定網址'/網址名稱'，import 檔案位置進去

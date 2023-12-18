@@ -48,6 +48,7 @@
           </div>
       </div>
     </div>
+    <transition name="fade">
     <div class="background" v-show="invioceShowed">
       <el-card class="box-card">
         <template #header>
@@ -70,7 +71,7 @@
         </div>
       </el-card>
     </div>
-    
+    </transition>
   </div>
 </template>
 
@@ -295,6 +296,18 @@ export default {
     .icon{
       line-height: 2;
       padding-right: 20px;
+    }
+
+    .fade-enter-active, .fade-leave-active{
+      transition: opacity 0.5s;
+    }
+
+    .fade-enter-from, .fade-leave-to{
+      opacity: 0;
+    }
+
+    .fade-enter-to, fade-leave-from{
+      opacity: 1;
     }
     
 </style>

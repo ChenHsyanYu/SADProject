@@ -24,6 +24,11 @@ const routes = [
     path: '/infoPage',
     name: 'infoPage',
     component: () => import('../views/InfoPage.vue')
+  },
+  {
+    path: '/searchPage',
+    name: 'searchPage',
+    component: () => import('../views/SearchPage.vue')
   }
 ]
 

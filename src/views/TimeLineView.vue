@@ -3,6 +3,13 @@
         <div class="header">
             <!-- <span id="timeLine">Time Line</span> -->
             <span id="productTitle">衣服</span>
+            <div style="margin-top: 20px">
+                <el-radio-group v-model="radio2" fill="#FFD6B0" text-color="gray">
+                    <el-radio-button label="祖譜圖" />
+                    <el-radio-button label="產品資訊" />
+                </el-radio-group>
+            </div>
+            <!-- <el-switch v-model="value1" @change="istrue" active-text="祖譜圖" inactive-text="產品資訊" class="switch"/> -->
         </div>
         <div class="timeSpan">
             <div id="span">
@@ -21,9 +28,9 @@
                     <span class="factory">廠商數量：2</span>
                 </div>
                 <div class="barInfo">
-                    <div class="body">
+                    <div class="body" style="cursor: pointer;" @click="toInfoPage">
                         <div class="rawBar"></div>
-                        <div class="wordCont" @click="toInfoPage" style="cursor: pointer;">
+                        <div class="wordCont" >
                             <span class="title">紡織原料</span>
                             <span class="factoryName">factory name</span>
                         </div>
@@ -125,6 +132,8 @@ export default {
         const showSec = ref(false);
         const showThird = ref(false);
         const router = useRouter();
+        const value1 = ref(true);
+        const radio2 = ref('產品資訊')
 
         const show = (index) =>{
             if(index === "1"){
@@ -146,7 +155,15 @@ export default {
 
         const toInfoPage = ()=>{
             router.push('/infoPage');
-        }
+        };
+
+        const istrue = ()=>{
+            console.log(value1);
+        };
+
+        const change = (label)=>{
+            radio2.value = label;
+        };
         return{
             product_title,
             showSec,
@@ -155,6 +172,10 @@ export default {
             unshow,
             showThird,
             toInfoPage,
+            value1,
+            istrue,
+            radio2,
+            change,
         }
     }
 
@@ -401,6 +422,12 @@ export default {
 
     #text3{
         background-color: #F7CECE;
+    }
+
+    .switch{
+        position: absolute;
+        right: 30px;
+        top:150px;
     }
 
 </style>

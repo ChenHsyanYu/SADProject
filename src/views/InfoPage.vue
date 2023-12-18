@@ -15,7 +15,7 @@
               <div class="infoBody">
                 <div id="body">
                   <span id="id">#Lot </span>
-                  <el-button size="large"><span class="button">發票內容 invoice</span></el-button>
+                  <el-button size="large" @click="showInvoice"><span class="button">發票內容 invoice</span></el-button>
                   <el-button size="large"><span class="button">付費重量 payload</span></el-button>
                 </div>
               </div>
@@ -38,23 +38,55 @@
         </div>
       </div>
       <div id="sec">
-        <span class="title2">產品製造資訊 production</span>
+        <span class="title2">運送資訊 shipping</span>
         <div id="inside">
           <span id="date">2011/02/13  <span>am 09：15</span></span>
-          <span>實際產品名稱 product title</span>
-          <span>數量 quantity</span>
+          <span>出貨地 from</span>
+          <span>送至 to</span>
+          <span>接收地 receiver</span>
           <span>批發號 #LOT</span>
           </div>
       </div>
     </div>
-      
-                
+    <div class="background" v-show="invioceShowed">
+      <el-card class="box-card">
+        <template #header>
+          <div class="card-header">
+            <span>發票資訊 Invoice information</span>
+            <el-button class="button" @click="showInvoice"><el-icon><close/></el-icon></el-button>
+          </div>
+        </template>
+        <div class="textItem">
+          <div class="left">
+            <span id="leftText">LastUpdated: 2019/08/05</span>
+            <img src="@/assets/invoice.png" class="invoiceImg">
+          </div>
+          <div class="right">
+            <span class="tit">發行日期 Issue date</span><span><el-icon class="icon"><Calendar /></el-icon>2019/08/05</span>
+            <span class="tit">類型 type</span><span><el-icon class="icon"><Van /></el-icon>原料運送</span>
+            <span class="tit">hash code</span><span><el-icon class="icon"><Connection /></el-icon>4x2lu6KpZUthHdLw$Adj</span>
+          </div>
+          
+        </div>
+      </el-card>
+    </div>
     
   </div>
 </template>
 
 <script>
+import { ref } from 'vue';
 export default {
+  setup(){
+    const invioceShowed = ref(false);
+    const showInvoice = () =>{
+      invioceShowed.value = !invioceShowed.value;
+    }
+    return{
+      showInvoice,
+      invioceShowed,
+    }
+  }
 
 }
 </script>
@@ -126,7 +158,7 @@ export default {
     }
 
     #mapImg{
-      width: 70%;
+      width: 80%;
       height: auto;
     }
     .wrap{
@@ -172,12 +204,6 @@ export default {
       display: block;
     }
 
-    .detailed{
-      /* display: grid; */
-      /* position: absolute; */
-      /* top: 350px; */
-      /* left: 40px; */
-    }
     .title3{
       display: block;
       font-size: 22px;
@@ -196,4 +222,77 @@ export default {
       position: absolute;
       top: 500px;
     }
+    .box-card{
+      width: 90vw;
+      height: 95vh;
+      position: absolute;
+      left: 5vw;
+      top: 2.5vh;
+      font-size: 22px;
+    }
+
+    .background{
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 10;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .card-header{
+      display: flex;
+      justify-content: space-between;
+      font-size: 36px;
+    }
+
+    #leftText{
+      display: block;
+      /* font-size: 30px; */
+    }
+
+    .left{
+      position: absolute;
+      left: 10%;
+      display: block;
+      /* padding: 0 30px; */
+      
+    }
+    .invoiceImg{
+      height: 100%;
+      padding: 30px;
+    }
+    .textItem{
+      position: relative;
+      padding: 30px;
+      font-size: 30px;
+      display: flex;
+      gap: 100px;
+    }
+    .right{
+      /* display: flex; */
+      text-align: left;
+      /* line-height: 2; */
+      display: block;
+      position: absolute;
+      right: 30%;
+      /* margin: 0 auto; */
+    }
+    .right>span{
+      display: block;
+      line-height: 2;
+    }
+
+    .tit{
+      font-size: 40px;
+      font-weight: 545;
+      color: black;
+    }
+
+    .icon{
+      line-height: 2;
+      padding-right: 20px;
+    }
+    
 </style>

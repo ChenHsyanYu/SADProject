@@ -288,6 +288,8 @@ export default {
       font-size: 40px;
       font-weight: 545;
       color: black;
+      /* background: #FFD6B0; */
+      border-radius: 10px;
     }
 
     .icon{

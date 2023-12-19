@@ -65,7 +65,12 @@
           <div class="right">
             <span class="tit">發行日期 Issue date</span><span><el-icon class="icon"><Calendar /></el-icon>2019/08/05</span>
             <span class="tit">類型 type</span><span><el-icon class="icon"><Van /></el-icon>原料運送</span>
-            <span class="tit">hash code</span><span><el-icon class="icon"><Connection /></el-icon>4x2lu6KpZUthHdLw$Adj</span>
+            <span class="tit">hash code</span><span class="url"><el-icon class="icon"><Connection /></el-icon>4x2lu6KpZUthHdLw$Adj</span>
+            <span class="tit">belonged block code</span><span class="url"><el-icon class="icon"><Connection /></el-icon>6bbcn73x1GKgY@H@T1wP!4ivIBvRrOVY!pKwh^rNf&d1P
+                                                                                                                        8eDIPXBuXZ*n5vu1jLUb2hqz1ASB!T*T8lgC48lhYXIlj
+                                                                                                                        Eq!^6OVE9OIu#G2e#lID%uur9OeVfwyQinCrCQ^&BJiIa</span>
+                                                              
+
           </div>
           
         </div>
@@ -267,7 +272,7 @@ export default {
     .textItem{
       position: relative;
       padding: 30px;
-      font-size: 30px;
+      font-size: 22px;
       display: flex;
       gap: 100px;
     }
@@ -277,7 +282,8 @@ export default {
       /* line-height: 2; */
       display: block;
       position: absolute;
-      right: 30%;
+      right: 20%;
+      left: 45%;
       /* margin: 0 auto; */
     }
     .right>span{
@@ -286,7 +292,7 @@ export default {
     }
 
     .tit{
-      font-size: 40px;
+      font-size: 30px;
       font-weight: 545;
       color: black;
       /* background: #FFD6B0; */
@@ -294,8 +300,9 @@ export default {
     }
 
     .icon{
-      line-height: 2;
+      line-height: 1;
       padding-right: 20px;
+      align-items: center;
     }
 
     .fade-enter-active, .fade-leave-active{
@@ -308,6 +315,14 @@ export default {
 
     .fade-enter-to, fade-leave-from{
       opacity: 1;
+    }
+
+    .url{
+      display: flex;
+      text-decoration-line: underline;
+
+      /* line-break: all; */
+      /* text-wrap: wrap; */
     }
     
 </style>

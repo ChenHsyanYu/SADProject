@@ -5,7 +5,7 @@
             <span id="productTitle">衣服</span>
             <div style="margin-top: 20px">
                 <el-radio-group v-model="radio2" fill="#FFD6B0" text-color="gray" @change="change">
-                    <el-radio-button label="祖譜圖" />
+                    <el-radio-button label="族譜圖" />
                     <el-radio-button label="產品資訊" />
                 </el-radio-group>
             </div>

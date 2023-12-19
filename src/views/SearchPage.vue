@@ -16,7 +16,7 @@
         @select="handleSelect"
         size="large"
       />
-      <el-button type="primary" size="large">查詢</el-button>
+      <el-button type="primary" size="large" @click="nextPage">查詢</el-button>
     </div>
     <!--  -->
     <div class="searchByName">
@@ -30,7 +30,7 @@
         @select="handleSelect"
         size="large"
       />
-      <el-button type="primary" size="large">查詢</el-button>
+      <el-button type="primary" size="large" @click="nextPage">查詢</el-button>
     </div>
     
   </div>
@@ -47,6 +47,9 @@ export default {
     const state2 = ref('');
     const restaurants = ref([]);
     const router = useRouter();
+    const nextPage = () =>{
+      router.push('/familyTree');
+    };
     const back = () =>{
       router.push('/timeline');
     };
@@ -67,7 +70,7 @@ export default {
   const loadAll = () => {
     return [
       { value: '4x2lu6KpZUthHdLw$Adj'},
-      { value: '紡織原料'}
+      { value: '衣服A'}
     ];
   };
 
@@ -85,6 +88,7 @@ export default {
       state1,
       state2,
       back,
+      nextPage,
     }
   }
 

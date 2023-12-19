@@ -4,7 +4,7 @@
             <!-- <span id="timeLine">Time Line</span> -->
             <span id="productTitle">衣服</span>
             <div style="margin-top: 20px">
-                <el-radio-group v-model="radio2" fill="#FFD6B0" text-color="gray">
+                <el-radio-group v-model="radio2" fill="#FFD6B0" text-color="gray" @change="change">
                     <el-radio-button label="祖譜圖" />
                     <el-radio-button label="產品資訊" />
                 </el-radio-group>
@@ -32,7 +32,7 @@
                         <div class="rawBar"></div>
                         <div class="wordCont" >
                             <span class="title">紡織原料</span>
-                            <span class="factoryName">factory name</span>
+                            <span class="factoryName">factory A</span>
                         </div>
                             
                     </div>
@@ -40,7 +40,7 @@
                         <div class="rawBar"></div>
                         <div class="wordCont">
                             <span class="title">絲料</span>
-                            <span class="factoryName">factory name</span>
+                            <span class="factoryName">factory B</span>
                         </div>
                     </div>
                     
@@ -58,7 +58,7 @@
                         <div class="processBar"></div>
                         <div class="wordCont">
                             <span class="title">第一階段布料</span>
-                            <span class="factoryName">factory name</span>
+                            <span class="factoryName">factory C</span>
                         </div>
                             
                     </div>
@@ -66,14 +66,14 @@
                         <div class="processBar"></div>
                         <div class="wordCont">
                             <span class="title">棉質布</span>
-                            <span class="factoryName">factory name</span>
+                            <span class="factoryName">factory D</span>
                         </div>
                     </div>
                     <div class="body">
                         <div class="rawBar"></div>
                         <div class="wordCont">
                             <span class="title">其他材質原料</span>
-                            <span class="factoryName">factory name</span>
+                            <span class="factoryName">factory E</span>
                         </div>
                     </div>
                     
@@ -91,7 +91,7 @@
                         <div class="sellerBar"></div>
                         <div class="wordCont">
                             <span class="title">品牌標示</span>
-                            <span class="factoryName">seller name</span>
+                            <span class="factoryName">seller A</span>
                         </div>
                             
                     </div>
@@ -99,7 +99,7 @@
                         <div class="sellerBar"></div>
                         <div class="wordCont">
                             <span class="title">品牌印製</span>
-                            <span class="factoryName">seller name</span>
+                            <span class="factoryName">seller B</span>
                         </div>
                     </div>
                     
@@ -161,9 +161,12 @@ export default {
             console.log(value1);
         };
 
-        const change = (label)=>{
-            radio2.value = label;
+        const change = ()=>{
+            if(radio2.value === "祖譜圖"){
+                router.push('/searchPage');
+            }
         };
+
         return{
             product_title,
             showSec,

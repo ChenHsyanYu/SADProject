@@ -162,7 +162,7 @@ export default {
         };
 
         const change = ()=>{
-            if(radio2.value === "祖譜圖"){
+            if(radio2.value === "族譜圖"){
                 router.push('/searchPage');
             }
         };
